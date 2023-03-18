@@ -1,0 +1,22 @@
+{% extends 'base.html' %} 
+{% block content %}
+<h1>Pokemon List</h1>
+{% for pokemon in pokemons %}
+<div class="card">
+    <a href="{% url 'detail' pokemon.id %}">
+        <div class="card-content">
+            <div class="flex-container">
+                <div>
+        <span class="card-title">{{ pokemon.name }}</span>
+    </div>
+
+    <div>
+        {% load static %} 
+        <img width="100px" height="100px" src="{% static pokemon.image|cut:'main_app/static' %}"/>
+    </div>
+    </div>
+</div>
+  </a>
+  {% endfor %} 
+  {% endblock %}
+  </div>
